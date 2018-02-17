@@ -14,6 +14,12 @@
 		E972EC4A2036EB9D0076843C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E972EC492036EB9D0076843C /* Assets.xcassets */; };
 		E972EC4D2036EB9D0076843C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E972EC4B2036EB9D0076843C /* LaunchScreen.storyboard */; };
 		E972EC502036EB9D0076843C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EC4F2036EB9D0076843C /* main.m */; };
+		E972EC582036ED120076843C /* PMServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EC572036ED120076843C /* PMServerManager.m */; };
+		E972EC5B203708170076843C /* PMRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EC5A203708170076843C /* PMRepository.m */; };
+		E972EC5F203712F30076843C /* PMRepositoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EC5E203712F30076843C /* PMRepositoryCell.m */; };
+		E972EC62203855750076843C /* PMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EC61203855750076843C /* PMWebViewController.m */; };
+		E972EC6520387BFD0076843C /* PMDataManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EC6420387BFD0076843C /* PMDataManger.m */; };
+		E972EC6820388AF30076843C /* NSOperationQueue+PMFIFO.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EC6720388AF30076843C /* NSOperationQueue+PMFIFO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,18 @@
 		E972EC4C2036EB9D0076843C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E972EC4E2036EB9D0076843C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E972EC4F2036EB9D0076843C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E972EC562036ED120076843C /* PMServerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMServerManager.h; sourceTree = "<group>"; };
+		E972EC572036ED120076843C /* PMServerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMServerManager.m; sourceTree = "<group>"; };
+		E972EC59203708170076843C /* PMRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMRepository.h; sourceTree = "<group>"; };
+		E972EC5A203708170076843C /* PMRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMRepository.m; sourceTree = "<group>"; };
+		E972EC5D203712F30076843C /* PMRepositoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMRepositoryCell.h; sourceTree = "<group>"; };
+		E972EC5E203712F30076843C /* PMRepositoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMRepositoryCell.m; sourceTree = "<group>"; };
+		E972EC60203855750076843C /* PMWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMWebViewController.h; sourceTree = "<group>"; };
+		E972EC61203855750076843C /* PMWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMWebViewController.m; sourceTree = "<group>"; };
+		E972EC6320387BFD0076843C /* PMDataManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMDataManger.h; sourceTree = "<group>"; };
+		E972EC6420387BFD0076843C /* PMDataManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMDataManger.m; sourceTree = "<group>"; };
+		E972EC6620388AF30076843C /* NSOperationQueue+PMFIFO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+PMFIFO.h"; sourceTree = "<group>"; };
+		E972EC6720388AF30076843C /* NSOperationQueue+PMFIFO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+PMFIFO.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +62,8 @@
 		E972EC312036EB9D0076843C = {
 			isa = PBXGroup;
 			children = (
+				E972EC6620388AF30076843C /* NSOperationQueue+PMFIFO.h */,
+				E972EC6720388AF30076843C /* NSOperationQueue+PMFIFO.m */,
 				E972EC3C2036EB9D0076843C /* GitHub API */,
 				E972EC3B2036EB9D0076843C /* Products */,
 			);
@@ -60,10 +80,19 @@
 		E972EC3C2036EB9D0076843C /* GitHub API */ = {
 			isa = PBXGroup;
 			children = (
+				E972EC5C2037081F0076843C /* Models */,
 				E972EC3D2036EB9D0076843C /* AppDelegate.h */,
 				E972EC3E2036EB9D0076843C /* AppDelegate.m */,
+				E972EC5D203712F30076843C /* PMRepositoryCell.h */,
+				E972EC5E203712F30076843C /* PMRepositoryCell.m */,
 				E972EC402036EB9D0076843C /* ViewController.h */,
 				E972EC412036EB9D0076843C /* ViewController.m */,
+				E972EC60203855750076843C /* PMWebViewController.h */,
+				E972EC61203855750076843C /* PMWebViewController.m */,
+				E972EC6320387BFD0076843C /* PMDataManger.h */,
+				E972EC6420387BFD0076843C /* PMDataManger.m */,
+				E972EC562036ED120076843C /* PMServerManager.h */,
+				E972EC572036ED120076843C /* PMServerManager.m */,
 				E972EC432036EB9D0076843C /* Main.storyboard */,
 				E972EC492036EB9D0076843C /* Assets.xcassets */,
 				E972EC4B2036EB9D0076843C /* LaunchScreen.storyboard */,
@@ -72,6 +101,15 @@
 				E972EC462036EB9D0076843C /* GitHub_API.xcdatamodeld */,
 			);
 			path = "GitHub API";
+			sourceTree = "<group>";
+		};
+		E972EC5C2037081F0076843C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E972EC59203708170076843C /* PMRepository.h */,
+				E972EC5A203708170076843C /* PMRepository.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +185,14 @@
 			files = (
 				E972EC422036EB9D0076843C /* ViewController.m in Sources */,
 				E972EC3F2036EB9D0076843C /* AppDelegate.m in Sources */,
+				E972EC6520387BFD0076843C /* PMDataManger.m in Sources */,
+				E972EC62203855750076843C /* PMWebViewController.m in Sources */,
+				E972EC5F203712F30076843C /* PMRepositoryCell.m in Sources */,
 				E972EC502036EB9D0076843C /* main.m in Sources */,
 				E972EC482036EB9D0076843C /* GitHub_API.xcdatamodeld in Sources */,
+				E972EC6820388AF30076843C /* NSOperationQueue+PMFIFO.m in Sources */,
+				E972EC5B203708170076843C /* PMRepository.m in Sources */,
+				E972EC582036ED120076843C /* PMServerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
