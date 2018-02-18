@@ -218,7 +218,7 @@
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: vc];
     
-    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    nav.modalPresentationStyle = UIModalPresentationPageSheet;
     nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; 
     
     if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1){

@@ -40,6 +40,8 @@
     [self.webView loadRequest: request];
     
     [self.view insertSubview: self.webView belowSubview: self.indicator];
+    
+    self.navigationItem.title = [self.webView.URL lastPathComponent];
 }
 
 #pragma mark - Actions
@@ -54,15 +56,11 @@
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
     
     [self.indicator startAnimating];
-    
-    NSLog(@"%@", self.webView.URL);
-    NSLog(@"didStartProvisionalNavigation");
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     
     [self.indicator stopAnimating];
-    NSLog(@"didFinishNavigation");
 }
 
 
