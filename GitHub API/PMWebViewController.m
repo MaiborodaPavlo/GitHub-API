@@ -22,7 +22,9 @@
     
     self.webView.navigationDelegate = self;
     
-    [self.webView addObserver: self forKeyPath:@"estimatedProgress" options: NSKeyValueObservingOptionNew context: nil];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle: @"Done" style: UIBarButtonItemStyleDone target: self action: @selector(doneAction:)];
+    
+    self.navigationItem.rightBarButtonItem = doneButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,14 +39,21 @@
     
     [self.webView loadRequest: request];
     
-    [self.view insertSubview: self.webView belowSubview: self.progressView];
+    [self.view insertSubview: self.webView belowSubview: self.indicator];
+}
+
+#pragma mark - Actions
+
+- (void) doneAction: (UIBarButtonItem *) sender {
+    
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 #pragma mark - WKNavigationDelegate
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
     
-    [self.progressView setHidden: NO];
+    [self.indicator startAnimating];
     
     NSLog(@"%@", self.webView.URL);
     NSLog(@"didStartProvisionalNavigation");
@@ -52,21 +61,8 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     
-    [self.progressView setHidden: YES];
+    [self.indicator stopAnimating];
     NSLog(@"didFinishNavigation");
-
-    [self.webView removeObserver: self forKeyPath: @"estimatedProgress"];
-}
-
-#pragma mark - Observing
-
-- (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context {
-    
-    if ([keyPath isEqualToString:@"estimatedProgress"]) {
-        NSLog(@"%@", change[NSKeyValueChangeNewKey]);
-        [self.progressView setProgress: [change[NSKeyValueChangeNewKey] integerValue] animated: YES];
-    }
-    
 }
 
 

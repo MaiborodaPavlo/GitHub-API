@@ -13,7 +13,7 @@
 @interface PMWebViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
 - (void) loadRequest: (NSURLRequest *) request;
 

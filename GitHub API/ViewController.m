@@ -216,21 +216,24 @@
     
     PMWebViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier: @"PMWebViewController"];
     
-    vc.modalPresentationStyle = UIModalPresentationPopover;
-    vc.preferredContentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
-    vc.popoverPresentationController.sourceView = self.view;
-    vc.popoverPresentationController.delegate = self;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: vc];
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath: indexPath];
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; 
     
-    vc.popoverPresentationController.sourceRect = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, CGRectGetWidth(self.view.frame), CGRectGetHeight(cell.frame));
+    if(floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1){
+        nav.view.superview.frame = CGRectInset(nav.view.superview.frame, 10, 50);
+    }else{
+        nav.view.frame = CGRectInset(nav.view.frame, 10, 50);
+        nav.view.superview.backgroundColor = [UIColor clearColor];
+    }
     
     NSURL *url = [[self.repositories objectAtIndex: indexPath.row] url];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
     
     [vc loadRequest: request];
 
-    [self presentViewController: vc animated: YES completion: nil];
+    [self presentViewController: nav animated: YES completion: nil];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
